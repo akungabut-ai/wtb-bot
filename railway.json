@@ -3,6 +3,13 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "python bot.py"
+    "startCommand": "python bot.py",
+    "envVars": {
+      "BOT_TOKEN": "$BOT_TOKEN",
+      "CHANNEL_ID": "$CHANNEL_ID",
+      "CHANNEL_USERNAME": "$CHANNEL_USERNAME",
+      "DISCUSSION_GROUP_ID": "$DISCUSSION_GROUP_ID",
+      "ADMIN_IDS": "$ADMIN_IDS"
+    }
   }
 }
