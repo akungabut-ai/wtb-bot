@@ -1,0 +1,6 @@
+*.pkl
+stats.json
+__pycache__/
+config.py
+*.pyc
+.env 
