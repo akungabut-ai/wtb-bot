@@ -3,7 +3,7 @@
 """
 import os
 
-BOT_TOKEN    = os.environ.get("BOT_TOKEN", "")
+BOT_TOKEN    = os.environ.get["BOT_TOKEN"]
 CHANNEL_ID   = int(os.environ.get("CHANNEL_ID", "0"))
 CHANNEL_USERNAME = os.environ.get("CHANNEL_USERNAME", "@grammenfess")
 DISCUSSION_GROUP_ID = int(os.environ.get("DISCUSSION_GROUP_ID", "0"))
