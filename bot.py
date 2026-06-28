@@ -267,7 +267,7 @@ def build_comment_link(msg):
 # ======================================================================
 # KIRIM NOTIFIKASI KE OWNER
 # ======================================================================
-async def notify_owner(context, user, text):
+async def notify_owner(context, user, text, post_link=None):
     """Kirim notifikasi ke semua ADMIN_IDS dengan tombol Ban/Unban."""
     name     = user.first_name or "?"
     username = f"@{user.username}" if user.username else "(no username)"
@@ -280,6 +280,8 @@ async def notify_owner(context, user, text):
         f"🆔 <b>ID:</b> <code>{user.id}</code>\n"
         f"📛 <b>Username:</b> {username}\n"
         f"⏰ <b>Waktu:</b> {now}\n\n"
+        f"💬 <b>Isi Pesan:</b>\n<i>{preview}</i>\n"
+        f"🔗 <b>Link Pesan:</b> <a href='{post_link}'>Lihat di Channel</a>" if post_link else
         f"💬 <b>Isi Pesan:</b>\n<i>{preview}</i>"
     )
 
@@ -412,11 +414,11 @@ async def handle_message(update, context):
         detail=text,
     )
 
-    # Kirim notifikasi ke owner
-    await notify_owner(context, user, text)
-
     ch_pure   = CHANNEL_USERNAME.lstrip("@")
     post_link = f"https://t.me/{ch_pure}/{sent.message_id}"
+
+    # Kirim notifikasi ke owner
+    await notify_owner(context, user, text, post_link=post_link)
     preview   = text[:80] + ("..." if len(text) > 80 else "")
 
     await message.reply_text(
@@ -1019,4 +1021,4 @@ def main():
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == "__main__":
-    main() 
+    main()
