@@ -416,11 +416,10 @@ async def handle_message(update, context):
     preview   = text[:80] + ("..." if len(text) > 80 else "")
 
     await message.reply_text(
-        f"🎱 <b>Pesan kamu berhasil dikirim!</b>\n\n📝 <i>{preview}</i>\n\n"
-        "Postinganmu udah live di channel! Tunggu seller yang DM kamu ya 🔥",
-        parse_mode="HTML",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("👀 Lihat Postingan", url=post_link)]]),
-    )
+    f"🎱 <b>Pesan kamu berhasil dikirim!</b>\n\n📝 <i>{preview}</i>",
+    parse_mode="HTML",
+    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("👀 Lihat Postingan", url=post_link)]]),
+)
 
 # ======================================================================
 # GROUP: cek subscribe
