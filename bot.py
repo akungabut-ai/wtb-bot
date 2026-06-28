@@ -200,17 +200,11 @@ def ch_url(username): return f"https://t.me/{username.lstrip('@')}"
 
 def welcome_text(name):
     return (
-        f"🎱 <b>Heyy {name}, welcome to WTB Bot!</b> ✨\n\n"
-        "Di sini kamu bisa posting <b>Want To Buy (WTB)</b> langsung ke channel.\n\n"
-        "Cukup ketik pesan WTB kamu di sini, bot otomatis kirim ke channel.\n"
-        "Kamu juga dapat notifikasi kalau ada yang komentar di postinganmu 🔔\n\n"
-        "━━━━━━━━━━━━━━━━━━━━━\n"
-        "⛔ <b>Dilarang:</b>\n"
-        "• Kata kasar / SARA / ujaran kebencian\n"
-        "• Spam (ada jeda 20 detik antar pesan)\n"
-        "• Konten ilegal, penipuan, atau judi\n"
-        "━━━━━━━━━━━━━━━━━━━━━\n"
-        "Selamat berbelanja! 🎯"
+        f"🎱 Halo {name}, selamat datang di bot WTB milik @grammenfess!\n\n"
+        "Disini kamu bisa posting Want To Buy kamu dan akan langsung di-forward ke channel.\n\n"
+        "Cukup ketik pesan WTB kamu disini tanpa menggunakan 🎱\n\n"
+        "Bot akan otomatis kirim pesan kamu ke channel.\n\n"
+        "Selamat berbelanja!"
     )
 
 HELP_TEXT = (
